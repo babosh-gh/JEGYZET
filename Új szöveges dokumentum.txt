@@ -1,1 +1,52 @@
-keksz
+// Angular parancsok terminálba és fájlokba
+
+// Angular kliens install:
+npm install -g @angular/cli
+
+// új angular projekt készítés:
+ng new vizsga
+
+// cd vizsga után:
+// új komponens a projekten belül:
+ng g c vizsgafeladat
+
+
+app.component.html - utolsó sort kivéve törölni mindent
+
+// Bootstrap install és import
+npm install bootstrap
+
+// src / styles.css
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+// FormsModul import
+// app.module.ts
+import { FormsModule } from '@angular/forms';
+FormsModule
+
+
+// ROUTING
+// app-routing-module.ts
+
+const routes: Routes = [
+  { path: "vizsgafeladat", component: VizsgafeladatComponent },//Ha beírom megoldás, akkor a vizsga megoldására ugrik
+  { path: "", redirectTo: "/vizsgafeladat", pathMatch: "full" },//Ha üresen hagyom az útvonal nevét akkor is
+  { path: "**", component: VizsgafeladatComponent }//Vagy ha bármi mást írok be akkor is
+];
+
+
+// kétirányú adatkötés aka INTERPOLÁCIÓ
+
+ <input type="number" class="form-control" id="bootstrapInput" [(ngModel)]="bootstrapModul">
+<p>A vizsgán szerzett feladatok összpontszáma:
+        {{htmlModul+bootstrapModul+javaScriptModul+typeScriptModul+angularModul+serverModul}}</p>
+
+  megoldasok: string[] = [];
+    <ul>
+        <li *ngFor="let eredmenyek of megoldasok">
+            {{eredmenyek}}
+        </li>
+    </ul>
+
+
