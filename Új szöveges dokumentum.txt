@@ -38,15 +38,32 @@ const routes: Routes = [
 
 // kétirányú adatkötés aka INTERPOLÁCIÓ
 
- <input type="number" class="form-control" id="bootstrapInput" [(ngModel)]="bootstrapModul">
-<p>A vizsgán szerzett feladatok összpontszáma:
-        {{htmlModul+bootstrapModul+javaScriptModul+typeScriptModul+angularModul+serverModul}}</p>
+// BACKEND RÉSZ - vizsgafeladat.component.ts
+  suly: number = 1;
+  magassag: number = 1;
 
+  EredmenyMentes() {
+    this.megoldasok.push(`Az ${this.suly}kg testsúlyó és ${this.magassag}m magasságú ember testtömeg indexe: ${this.suly / (this.magassag * this.magassag)}`)
+  }
   megoldasok: string[] = [];
+
+
+// FRONTEND RÉSZ -  vizsgafeladat.components.html
+<div class="container">
+    <h2>Angular modul megoldása</h2>
+    <label for="sulyInput">Add meg a súlyod kilógrammban:</label>
+    <input type="number" class="form-control" id="sulyInput" [(ngModel)]="suly">
+    <label for="magassagInput">Add meg a magasságod méterben</label>
+    <input type="number" class="form-control" id="magassagInput" [(ngModel)]="magassag">
+    <button type="button" class="btn btn-success form-control mt-3" (click)="EredmenyMentes()">Eredmény mentése</button>
+    <p>A megadott értékek alapján a testtömeg index: {{suly/(magassag*magassag)}}</p>
+
     <ul>
         <li *ngFor="let eredmenyek of megoldasok">
             {{eredmenyek}}
         </li>
     </ul>
+</div>
 
+van egy üres <ul>. benne csinálunk egy *ngFor-t, ami azt csinálja, hogy a vizsgált tömb (megoldasok) minden eleméhez csinál egy új <li> tagot, amibe belehelyezi a függvény eredményét.
 
