@@ -1,0 +1,37 @@
+querySelector<>()
+const inputElem =  document.querySelector<HTMLInputElement>( '#szamInput'); 
+
+
+// LEGFONTOSABB HTML ELEMTÍPUSOK
+HTML elem  TypeScript típusa
+<input>HTMLInputElement
+<form>HTMLFormElement
+<select>HTMLSelectElement
+<textarea>HTMLTextAreaElement
+<button>HTMLButtonElement
+<a>(link)HTMLAnchorElement
+<img>HTMLImageElement
+<video>HTMLVideoElement
+<audio>HTMLAudioElement
+<label>HTMLLabelElement
+<table>HTMLTableElement
+<tr>HTMLTableRowElement
+<td>/<th>HTMLTableCellElement
+<div>HTMLDivElement
+<span>HTMLSpanElement
+<canvas>HTMLCanvasElement
+<ul>/<ol>HTMLUListElement/TMLOListElement
+<li>HTMLLIElement
+
+
+
+// Eseménykezelés arrow functionnel és anélkül:
+
+const gomb =  document.querySelector<HTMLButtonElement>( '#gomb');
+gomb?. addEventListener('click', (event:  MouseEvent)  =>  { console.log  ('Rákattintottál!'); });   
+
+const gomb = document.querySelector<HTMLButtonElement>( '#kuldesGomb');
+function kattintasKezelo(event: MouseEvent): void{  alert('Kattintottál a gombra!');
+}
+// esemény regisztrálása
+gomb?. addEventListener('click', kattintasKezelo);
