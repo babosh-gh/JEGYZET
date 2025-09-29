@@ -17,13 +17,22 @@ app.component.html - utolsó sort kivéve törölni mindent
 npm install bootstrap
 
 // src / styles.css
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap.css"; // ~ lehet kell a bootstrap szó elé.
 
 
 // FormsModul import
-// app.module.ts
+// app.module.ts VAGY app.config.ts
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; // CommonModule importálása az *ngFor-hoz
+
 FormsModule
+
+//lehet, hogy a konkrét komponens.ts fájlba kell importálni:
+@Component({ részben az imports tömbbe:
+
+CommonModule, FormsModule
+
+
 
 
 // ROUTING
@@ -39,6 +48,12 @@ const routes: Routes = [
 // kétirányú adatkötés aka INTERPOLÁCIÓ
 
 // BACKEND RÉSZ - vizsgafeladat.component.ts
+
+//backend részben mindent class-ba kell írni.
+// a classon belül nem kell semmit külön deklarálni (let, var, function)
+//változókat "this."-tal kell írni.
+
+
   suly: number = 1;
   magassag: number = 1;
 
@@ -66,4 +81,5 @@ const routes: Routes = [
 </div>
 
 van egy üres <ul>. benne csinálunk egy *ngFor-t, ami azt csinálja, hogy a vizsgált tömb (megoldasok) minden eleméhez csinál egy új <li> tagot, amibe belehelyezi a függvény eredményét.
+
 
