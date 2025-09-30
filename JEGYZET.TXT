@@ -1,7 +1,19 @@
 // Angular parancsok terminálba és fájlokba
 
 // Angular kliens install:
+npm install -g @angular/cli@17
 npm install -g @angular/cli
+
+//angular uninstall:
+npm uninstall -g @angular/cli
+npm uninstall -g angular/cli
+npm cache verify
+npm cache clean --force
+
+
+
+
+
 
 // új angular projekt készítés:
 
@@ -92,3 +104,4 @@ van egy üres <ul>. benne csinálunk egy *ngFor-t, ami azt csinálja, hogy a viz
 //  export interface turaSzakasz {
       //interface
 }
+
