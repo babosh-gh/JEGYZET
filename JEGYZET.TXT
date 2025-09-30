@@ -51,6 +51,7 @@ CommonModule, FormsModule
 
 // ROUTING
 // app-routing-module.ts
+// app.routes.ts
 
 const routes: Routes = [
   { path: "vizsgafeladat", component: VizsgafeladatComponent },//Ha beírom megoldás, akkor a vizsga megoldására ugrik
@@ -104,4 +105,5 @@ van egy üres <ul>. benne csinálunk egy *ngFor-t, ami azt csinálja, hogy a viz
 //  export interface turaSzakasz {
       //interface
 }
+
 
