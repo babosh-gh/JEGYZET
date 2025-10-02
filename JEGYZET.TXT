@@ -107,3 +107,29 @@ van egy üres <ul>. benne csinálunk egy *ngFor-t, ami azt csinálja, hogy a viz
 }
 
 
+//számtömbben prím számok mennyiségének megszámolása:
+function PrimekSzama(vizsgaltTomb: number[]): number {
+   let primekSzama: number = 0;
+
+   for (let i: number = 0; i < vizsgaltTomb.length; i++) {
+      let osztokSzama: number = 0;
+      for (let j: number = 1; j <= vizsgaltTomb[i]; j++) {
+         if (vizsgaltTomb[i] % j == 0) {
+            osztokSzama++;
+         }
+      }
+      if (osztokSzama == 2) {
+         primekSzama++;
+      }
+   }
+
+   return primekSzama;
+}
+
+
+
+
+// szerver cuccok:
+
+elindítás:
+node server.js
