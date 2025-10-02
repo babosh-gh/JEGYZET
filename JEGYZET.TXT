@@ -125,6 +125,21 @@ function PrimekSzama(vizsgaltTomb: number[]): number {
 
    return primekSzama;
 }
+//vizsgalt szam prim-e vagy sem boolean
+  PrimE(vizsgaltSzam: number): string {
+    let osztokSzama: number = 0;
+    for (let i = 1; i <= vizsgaltSzam; i++) {
+      if (vizsgaltSzam % i == 0) {
+        osztokSzama++;
+      }
+    }
+    if (osztokSzama == 2) {
+      return `prím`;
+    } else {
+      return `NEM prím`;
+    }
+  }
+  
 
 
 
@@ -133,3 +148,4 @@ function PrimekSzama(vizsgaltTomb: number[]): number {
 
 elindítás:
 node server.js
+
