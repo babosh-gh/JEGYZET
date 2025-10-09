@@ -1,9 +1,21 @@
+Jquery
+
 querySelector<>()
-const inputElem =  document.querySelector<HTMLInputElement>( '#szamInput'); 
+const inputElem =  document.querySelector<HTMLInputElement>('#szamInput'); vagy ('.classNév');
+
+document.getElementById(")
+document.getElementsByClassName("classNév")
+document.getElementsByName(")
+
+belső elemek:
+document.querySelector('#main .item') // main azonosítójú elem belső .item elemei
+document.querySelectorAll('.menu li') //összes <li> a .menu-n belül
+document.querySelectorAll('input[type="text"]') // az összes text típusú input
+
 
 
 // LEGFONTOSABB HTML ELEMTÍPUSOK
-HTML elem  TypeScript típusa
+// HTML elem  TypeScript típusa:
 <input>HTMLInputElement
 <form>HTMLFormElement
 <select>HTMLSelectElement
