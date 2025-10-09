@@ -1,0 +1,86 @@
+// random szám 1 és 10 között
+
+let szam = Math.floor(Math.random() * 10) + 1;
+
+// random egész szám függvény
+
+function randomEgesz(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Összegzés
+
+function Osszegzes(vizsgalandoTomb){
+	let osszeg=0; //osszeg változó kezdőértékét beállítom 0-ra
+	for(let i=0;i<vizsgalandoTomb.length;i++)
+	{
+		osszeg+=vizsgalandoTomb[i];
+	}
+	return osszeg;
+}
+
+// Átlagszámítás
+
+function Atlagszamitas(vizsgalandoTomb){let osszeg=0;for(let i=0;i<vizsgalandoTomb.length;i++){osszeg+=vizsgalandoTomb[i];}return osszeg/vizsgalandoTomb.length;}
+
+// Megszámlálás //páros számok. Prímszámok TODO
+
+function megszamlalasTeteleFuggveny(tomb){let darab=0;for(let i=0;i<tomb.length;i++){if(tomb[i]%2==0){darab++; //darab=darab+1;}}return darab;}
+
+// Kiválogatás
+
+function kivalogatasTeteleFuggveny(tomb){let kivalasztottElemek=[];for(let i=0;i<tomb.length;i++){if(tomb[i]%2==0){kivalasztottElemek.push(tomb[i]);}}return kivalasztottElemek;}
+
+// Minimum kiválasztás érték alapján
+
+function MinErtekKeresesFuggveny(tomb){let minErtek=tomb[0];for(let i=1;i<tomb.length;i++){if(tomb[i]<minErtek){minErtek=tomb[i];}}return minErtek;}
+
+// Minimum kiválasztás index alapján
+
+function MinIndexKeresesFuggveny(tomb){let minIndex=0;for(let i=1;i<tomb.length;i++){if(tomb[i]<tomb[minIndex]){minIndex=i;}}return minIndex;}
+
+// Maximum kiválasztás érték alapján
+
+function MaxErtekKeresesFuggveny(tomb){let maxErtek=tomb[0];for(let i=1;i<tomb.length;i++){if(tomb[i]>maxErtek){maxErtek=tomb[i];}}return maxErtek;}
+
+// Maximum kiválasztás index alapján
+
+function MaxIndexKeresesFuggveny(tomb){let maxIndex=0;for(let i=1;i<tomb.length;i++){if(tomb[i]>tomb[maxIndex]){maxIndex=i;}}return maxIndex;}
+
+
+
+// Halmazműveletek
+
+//UNIO //két tömb elemeit egy új tömbbe beemelni anélkül, hogy lenne ismétlés az unio tömbben.
+
+function Unio(tomb1, tomb2) {
+  let unio = [];
+
+  // Első halmaz elemei
+  for (let i = 0; i < tomb1.length; i++) {
+    if (!unio.includes(tomb1[i])) {
+      unio.push(tomb1[i]);
+    }
+  }
+
+  // Második halmaz elemei
+  for (let i = 0; i < tomb2.length; i++) {
+    if (!unio.includes(tomb2[i])) {
+      unio.push(tomb2[i]);
+    }
+  }
+
+  return unio;
+}
+
+function Unio(tomb1, tomb2){let unio=[];//Első halmaz elemein megy végigfor(let i=0;i<tomb1.length;i++){let szerepelE=false;for(let j=0;j<unio.length;j++){if(tomb1[i]==unio[j]){szerepelE=true;}}if(szerepelE==false){unio.push(tomb1[i]);}        }//Második halmaz elemein megy végigfor(leti=0;i<tomb2.length;i++){let szerepelE=false;for(let j=0;j<unio.length;j++){if(tomb2[i]==unio[j]){szerepelE=true;}}if(szerepelE==false){unio.push(tomb2[i]);}        }return unio;}
+
+//METSZET //két tömb elemeit bevágja egy új tömbbe, ha azok egyeznek, de még nem szerepel az új tömbben.
+
+function Metszet(tomb1, tomb2){let metszet= [];for(let i=0;i<tomb1.length;i++){for(let j=0;j<tomb2.length;j++){if(tomb1[i]==tomb2[j]){let szerepelE=false;for(let k=0;k<metszet.length;k++){if(tomb1[i]==metszet[k]){szerepelE=true;}}if(szerepelE==false){metszet.push(tomb1[i]);}}}}return metszet;}
+
+
+
+// Különbség függvény (AKÜLB) ismétléssel
+
+
