@@ -11,7 +11,10 @@ npm cache verify
 npm cache clean --force
 
 
-
+// ts install
+npm install -g typescript
+.ts fájlba írni
+tsc filenév.ts -w
 
 
 
@@ -148,4 +151,5 @@ function PrimekSzama(vizsgaltTomb: number[]): number {
 
 elindítás:
 node server.js
+
 
