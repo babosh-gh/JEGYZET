@@ -10,14 +10,6 @@ npm uninstall -g angular/cli
 npm cache verify
 npm cache clean --force
 
-
-// ts install
-npm install -g typescript
-.ts fájlba írni
-tsc filenév.ts -w
-
-
-
 // új angular projekt készítés:
 
 ng new vizsga --no-standalone //ez
@@ -26,6 +18,11 @@ ng new vizsga
 // cd vizsga után:
 // új komponens a projekten belül:
 ng g c vizsgafeladat
+
+// ts install
+npm install -g typescript
+.ts fájlba írni
+tsc filenév.ts -w
 
 
 app.component.html - utolsó sort kivéve törölni mindent
@@ -216,6 +213,7 @@ function PrimekKivalogatas(vizsgaltTomb: number[]): number[] {
 
 elindítás:
 node server.js
+
 
 
 
