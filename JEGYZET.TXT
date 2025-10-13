@@ -109,6 +109,19 @@ van egy üres <ul>. benne csinálunk egy *ngFor-t, ami azt csinálja, hogy a viz
       //interface
 }
 
+// számtömbben minden elem megvizsgálása és egyedi elemek (vagy számuk) visszaadása:
+
+function EgyediElemek(vizsgaltTomb: number[]): number {
+   let egyediElemek: number[] = [];
+   for (let i: number = 0; i < vizsgaltTomb.length; i++) {
+      if (!egyediElemek.includes(vizsgaltTomb[i])) {
+         egyediElemek.push(vizsgaltTomb[i]);
+      }
+   }
+   return egyediElemek.length;
+}
+
+
 
 //számtömbben prím számok mennyiségének megszámolása:
 function PrimekSzama(vizsgaltTomb: number[]): number {
@@ -203,6 +216,7 @@ function PrimekKivalogatas(vizsgaltTomb: number[]): number[] {
 
 elindítás:
 node server.js
+
 
 
 
