@@ -128,6 +128,58 @@ function PrimekSzama(vizsgaltTomb: number[]): number {
 
    return primekSzama;
 }
+//primek száma booleannal
+function PrimekSzama(vizsgaltTomb: number[]): number {
+   let primekSzama: number = 0;
+
+   for (let i: number = 0; i < vizsgaltTomb.length; i++) {
+      let szam: number = vizsgaltTomb[i];
+      let prim: boolean = true; // alapértelmezetten feltételezzük, hogy prím
+
+      if (szam < 2) {
+         prim = false; // 0 és 1 nem prím
+      } else {
+         for (let j: number = 2; j <= Math.sqrt(szam); j++) {
+            if (szam % j === 0) {
+               prim = false; // ha osztható, nem prím
+               break; // nem kell tovább ellenőrizni
+            }
+         }
+      }
+
+      if (prim) {
+         primekSzama++;
+      }
+   }
+
+   return primekSzama;
+}
+
+
+//primek kiválogatása új tömbbe:
+function PrimekKivalogatas(vizsgaltTomb: number[]): number[] {
+   let primekTomb: number[] = [];
+
+   for (let i: number = 0; i < vizsgaltTomb.length; i++) {
+      let osztokSzama: number = 0;
+
+      for (let j: number = 1; j <= vizsgaltTomb[i]; j++) {
+         if (vizsgaltTomb[i] % j == 0) {
+            osztokSzama++;
+         }
+      }
+
+      if (osztokSzama == 2) {
+         // ha prím, hozzáadjuk az új tömbhöz
+         primekTomb.push(vizsgaltTomb[i]);
+      }
+   }
+
+   return primekTomb;
+}
+
+
+
 //vizsgalt szam prim-e vagy sem boolean
   PrimE(vizsgaltSzam: number): string {
     let osztokSzama: number = 0;
@@ -151,5 +203,6 @@ function PrimekSzama(vizsgaltTomb: number[]): number {
 
 elindítás:
 node server.js
+
 
 
