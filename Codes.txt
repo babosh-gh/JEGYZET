@@ -1,1 +1,83 @@
+// Random számgenerátor //
+
+function Rng(alsoHatar: number, felsoHatar: number): number {
+   return Math.random() * (felsoHatar - alsoHatar) + alsoHatar;
+}
+
+// Random számgenerátor (Egész szám csak) //
+function Rng(alsoHatar: number, felsoHatar: number): number {
+   return Math.floor(Math.random() * (felsoHatar - alsoHatar +1) + alsoHatar);
+}
+
+//számtömb generátor a fentebbi random szám generátorral //
+
+function TombGenerator(meret: number, alsoHatar: number, felsoHatar: number): number[] {
+   let randomTomb: number[] = [];
+   for (let i: number = 0; i < meret; i++) {
+      let randomSzam: number = Rng(alsoHatar, felsoHatar);
+      randomTomb.push(randomSzam);
+   }
+   return randomTomb;
+}
+
+// számtömb elemeinek megduplázása //
+
+function Duplazo(vizsgaltTomb: number[]): number[] {
+   let duplazottTomb: number[] = [];
+   for (let i: number = 0; i < vizsgaltTomb.length; i++) {
+      let duplazottSzam: number = vizsgaltTomb[i] * 2;
+      duplazottTomb.push(duplazottSzam);
+   }
+   return duplazottTomb;
+}
+
+// számtömb elemeinek megduplázása rövidebb //
+
+function Duplazo2(vizsgaltTomb: number[]): number[] {
+   return vizsgaltTomb.map((szam) => szam * 2);
+}
+
+// Számtömbben lévő prímszámok összeszámolása
+
+function PrimekSzama(vizsgaltTomb: number[]): number {
+   let primekSzama: number = 0;
+   for (let i: number = 0; i < vizsgaltTomb.length; i++) {
+      let osztokSzama: number = 0; //megnézi a tömb minden egyes elemét, hogy hány osztója van
+      for (let j: number = 1; j <= vizsgaltTomb[i]; j++) {
+         //elkezd számolni 1-től a vizsgált számig, ha a vizsgált szám tud az aktuális értékkel maradéktalanul osztani, akkor megnő az osztók száma.
+         if (vizsgaltTomb[i] % j == 0) {
+            osztokSzama++;
+         }
+      }
+      if (osztokSzama == 2) {
+         //miután megnézte az aktuális szám összes osztóját, és ha csak 2 osztója van, akkor megnő a prímek száma.
+         primekSzama++;
+      }
+   }
+   return primekSzama;
+}
+
+// Számtömbben egyedi elemek kigyűjtése tömbbe és számuk visszaadása
+
+function EgyediElemek2(vizsgaltTomb: number[]): number {
+   let egyediElemek: number[] = [];
+   for (let i: number = 0; i < vizsgaltTomb.length; i++) {
+      if (!egyediElemek.includes(vizsgaltTomb[i])) {
+         egyediElemek.push(vizsgaltTomb[i]);
+      }
+   }
+   return egyediElemek.length;
+}
+
+// Számbtömb egyedi elemek kigyűjtése és tömbjük visszaadása
+
+function EgyediElemek(vizsgaltTomb: number[]): number[] {
+   let egyediElemek: number[] = [];
+   for (let i = 0; i < vizsgaltTomb.length; i++) {
+      if (!egyediElemek.includes(vizsgaltTomb[i])) {
+         egyediElemek.push(vizsgaltTomb[i]);
+      }
+   }
+   return egyediElemek;
+}
 
