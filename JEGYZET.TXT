@@ -39,15 +39,12 @@ npm install bootstrap
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; // CommonModule importálása az *ngFor-hoz
 
-FormsModule
+FormsModule, CommonModule alatta a @NgModule( részben az imports tömbbe.
 
 //lehet, hogy a konkrét komponens.ts fájlba kell importálni:
 @Component({ részben az imports tömbbe:
 
 CommonModule, FormsModule
-
-
-
 
 // ROUTING
 // app-routing-module.ts
@@ -213,6 +210,7 @@ function PrimekKivalogatas(vizsgaltTomb: number[]): number[] {
 
 elindítás:
 node server.js
+
 
 
 
