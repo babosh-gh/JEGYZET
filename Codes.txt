@@ -81,3 +81,13 @@ function EgyediElemek(vizsgaltTomb: number[]): number[] {
    return egyediElemek;
 }
 
+//LEET Szöveg átalakító. stringből stringbe
+
+function LeetKod(vizsgaltSzoveg: string): string {
+   let mit = "iIoOaAeE"; //milyen betűket
+   let mire = "11004433"; //melyik számokra (2x van ott a kis-nagybetű kül. miatt)
+   for (let i = 0; i < mit.length; i++) {
+      vizsgaltSzoveg = vizsgaltSzoveg.replaceAll(mit[i], mire[i]);
+   }
+   return vizsgaltSzoveg;
+}
