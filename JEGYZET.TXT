@@ -92,7 +92,7 @@ const routes: Routes = [
     </ul>
 </div>
 
-van egy üres <ul>. benne csinálunk egy *ngFor-t, ami azt csinálja, hogy a vizsgált tömb (megoldasok) minden eleméhez csinál egy új <li> tagot, amibe belehelyezi a függvény eredményét.
+van egy üres <ul>. az <li>-ben csinálunk egy *ngFor-t, ami azt csinálja, hogy a vizsgált tömb (megoldasok) minden eleméhez csinál egy új <li> tagot, amibe belehelyezi a függvény eredményét.
 
 //.ts fájlban
 //minden class, interface külön exportot igényel.
@@ -210,6 +210,7 @@ function PrimekKivalogatas(vizsgaltTomb: number[]): number[] {
 
 elindítás:
 node server.js
+
 
 
 
