@@ -1,0 +1,100 @@
+// 🧩 1. interface – TÍPUSELLENŐRZÉS FELÁLLÍTÁSA AZ OBJEKTUMNAK
+
+Az interface csak leírja, hogy egy objektumnak milyen mezői és típusaik vannak.
+Nem hoz létre kódot, csak típusellenőrzést biztosít.
+
+Példa:
+interface Person {
+  name: string;
+  age: number;
+  greet(): void; // metódus típusa
+}
+
+const user: Person = {
+  name: "Anna",
+  age: 25,
+  greet() {
+    console.log("Szia!");
+  }
+};
+
+Az interface csak a „mit” írja le, nem a „hogyan”-t.
+Gondolj rá, mint egy tervre vagy szerződésre.
+
+
+
+// 🏗️ 2. class – objektumok sablonja
+
+A class (osztály) tényleges implementáció:
+ezzel lehet objektumokat létrehozni, metódusokat és tulajdonságokat definiálni.
+
+Példa:
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) { // 👈 konstruktor
+    this.name = name;
+    this.age = age;
+  }
+
+  greet(): void {
+    console.log(`Szia, ${this.name}!`);
+  }
+}
+
+const p1 = new Person("Béla", 30);
+p1.greet(); // "Szia, Béla!"
+
+
+
+//⚙️ 3. constructor – az osztály „indító függvénye”
+
+A constructor az a függvény, ami akkor fut le, amikor az osztályból új objektumot hozol létre (new kulcsszóval).
+Itt állítod be az alapértékeket és a tulajdonságokat.
+
+class Car {
+  brand: string;
+  year: number;
+
+  constructor(brand: string, year: number) {
+    this.brand = brand;
+    this.year = year;
+  }
+}
+
+const myCar = new Car("Toyota", 2020);
+console.log(myCar.brand); // "Toyota"
+
+
+
+//🔗 4. interface + class együtt
+
+Az interface és a class gyakran együtt dolgozik:
+
+az interface megmondja, mit kell tudnia az osztálynak,
+
+a class megvalósítja azt (implements kulcsszóval).
+
+interface Animal {
+  name: string;
+  makeSound(): void;
+}
+
+class Dog implements Animal {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  makeSound(): void {
+    console.log("Vau vau!");
+  }
+}
+
+const dog = new Dog("Bodri");
+dog.makeSound(); // "Vau vau!"
+
+
+const student1 = new Student("Anna", 21, 5);
