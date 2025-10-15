@@ -1,0 +1,125 @@
+==============================
+BOOTSTRAP GYORSSEGÉDLET
+==============================
+
+1️ LAYOUT / DIV / GRID
+==============================
+container              → központozott tartalom
+container-fluid        → teljes szélességű
+row                    → rácssor
+col, col-6, col-md-4   → oszlopok (reszponzív)
+d-flex                 → flexbox bekapcsolása
+justify-content-center → vízszintes középre igazítás
+align-items-center     → függőleges középre igazítás
+m-*, p-*               → margin/padding (térközök)
+border, rounded        → keret, lekerekítés
+shadow, shadow-lg      → dobozárnyék
+bg-* / text-*          → háttér- és szövegszín
+
+Példa:
+<div class="container p-3 bg-light rounded shadow">
+  <div class="row">
+    <div class="col-md-6 text-center border">Bal oldal</div>
+    <div class="col-md-6 text-center border">Jobb oldal</div>
+  </div>
+</div>
+
+
+2️ TÁBLÁZATOK (TABLES)
+==============================
+table                  → alap tábla stílus
+table-bordered          → keretes cellák
+table-striped           → váltakozó sor szín
+table-hover             → sor kiemelés egér fölé
+table-sm                → kompakt tábla
+table-dark              → sötét fejléchez
+
+Példa:
+<table class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr><th>Név</th><th>Kor</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Anna</td><td>25</td></tr>
+    <tr><td>Béla</td><td>30</td></tr>
+  </tbody>
+</table>
+
+
+3️ ŰRLAPOK (FORMS)
+==============================
+form-control           → input mező
+form-label             → mező felirat
+form-select            → legördülő lista
+form-check             → checkbox/radio wrapper
+btn, btn-primary       → gombok
+mb-3                   → mezők közti térköz
+
+Példa:
+<form class="p-3 border rounded bg-light">
+  <div class="mb-3">
+    <label class="form-label">Név</label>
+    <input type="text" class="form-control" placeholder="Írd be a neved">
+  </div>
+  <button class="btn btn-primary">Küldés</button>
+</form>
+
+
+4️ NAVBAR (NAVIGÁCIÓS SÁV)
+==============================
+navbar                 → alap navigáció
+navbar-expand-lg       → reszponzív menü
+navbar-dark bg-dark    → sötét téma
+navbar-light bg-light  → világos téma
+navbar-brand           → logó vagy cím
+nav-item, nav-link     → menüpontok
+collapse navbar-collapse → mobil nézethez
+
+Példa:
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MyApp</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Kezdőlap</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Rólunk</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+5️ HASZNOS UTILITY CLASSOK
+==============================
+d-none / d-block         → elrejtés / megjelenítés
+text-center / text-end   → szöveg igazítás
+text-primary / bg-success → színek
+btn-sm / btn-lg          → gomb méretek
+rounded-circle / rounded-pill → lekerekítés
+
+
+ÖSSZEFOGLALÁS
+==============================
+LAYOUT:  container, row, col, p-*, m-*, border, rounded
+TABLE:   table, table-striped, table-bordered, table-hover
+FORM:    form-control, form-label, btn, mb-3
+NAVBAR:  navbar, navbar-expand-lg, navbar-dark, navbar-brand, nav-item, nav-link
+UTILITY: d-flex, justify-content-center, text-*, bg-*, shadow, rounded
+
+
+
+==============================
+Színek:
+
+Kék	text-primary bg-primary
+Szürke	text-secondary	bg-secondary	
+Zöld	text-success	bg-success	
+Piros	text-danger	bg-danger
+Sárga / sárgászöld	text-warning	bg-warning
+Világoskék	text-info	bg-info
+Fehér	text-light	bg-light
+Fekete	text-dark	bg-dark
+Átlátszó / nincs	text-body	bg-white
